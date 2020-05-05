@@ -12,8 +12,8 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.get("/", (req, res) => res.status(200).json({ message: "hello" }))
 
 app.post("/test", (req, res) => {
-  console.log(req.body)
-  res.status(200).json(req.body)
+  console.log(req.body);
+  res.status(200).json({...req.body, message: "yes"})
 })
 
 app.post("/name", (req, res) => {
